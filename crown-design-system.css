@@ -33,9 +33,9 @@
   --primary-dark: #142d48;
   --primary-light: #4a7ba8;
   --primary-glow: rgba(26,58,92,0.25);
-  --accent: #c9a84c;
-  --accent-dark: #b8943a;
-  --accent-glow: rgba(201,168,76,0.25);
+  --accent: #2563EB;
+  --accent-dark: #1d4ed8;
+  --accent-glow: rgba(37,99,235,0.25);
   --bg-deep: #0c0f1a;
   --bg-dark: #111625;
   --bg-card: rgba(255,255,255,0.03);
@@ -593,5 +593,152 @@ footer a:hover {
   .btn {
     width: 100%;
     text-align: center;
+  }
+}
+
+/* ============================================================
+   CROWN DESIGN SYSTEM v2 — Image & Visual Components
+   Added 2026-06-17 as part of Website Makeover Phase 1
+   ============================================================ */
+
+/* --- Hero Graphics (Inline SVG Wrapper) --- */
+.hero-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 32px;
+  max-width: 600px;
+  min-height: 200px;
+  position: relative;
+}
+
+.hero-graphic svg {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
+}
+
+/* --- Article Thumbnail --- */
+.article-thumb {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: var(--bg-card);
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+.article-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.article-thumb:hover img {
+  transform: scale(1.03);
+}
+
+.article-thumb .placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover));
+}
+
+/* --- Product Image Card --- */
+.product-image {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover));
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 1px solid var(--border-light);
+  transition: border-color 0.3s ease;
+}
+
+.product-image:hover {
+  border-color: var(--accent);
+}
+
+.product-image svg {
+  width: 70%;
+  height: 70%;
+}
+
+/* --- Image Card with Hover Effect --- */
+.img-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-card-hover));
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.img-card:hover img {
+  transform: scale(1.05);
+}
+
+.img-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: #fff;
+}
+
+.img-card .overlay h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.img-card .overlay p {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* --- Featured Article Image Variant --- */
+.featured-article.has-thumb {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.featured-article.has-thumb .article-thumb {
+  width: 280px;
+  min-width: 280px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .featured-article.has-thumb {
+    flex-direction: column;
+  }
+  .featured-article.has-thumb .article-thumb {
+    width: 100%;
+    min-width: unset;
+  }
+  .hero-graphic svg {
+    max-height: 180px;
   }
 }
