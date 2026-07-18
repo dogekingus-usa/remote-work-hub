@@ -11,6 +11,35 @@
 *.csr                                403
 /config*                             403
 /node_modules/*                      403
+*.exe                                403
+*.dll                                403
+*.bin                                403
+*.msi                                403
+*.p7b                                403
+*.p12                                403
+*.pfx                                403
+*.der                                403
+*.htaccess                           403
+*.htpasswd                           403
+/.svn/*                              403
+*/.svn/*                             403
+.DS_Store                            403
+Thumbs.db                            403
+*.sql.gz                             403
+*.tar.gz                             403
+*.zip                                403
+*.rdb                                403
+*.dump                               403
+/backup*                             403
+/dump*                               403
+access.log                           403
+error.log                            403
+debug.log                            403
+npm-debug.log*                       403
+yarn-*.log                           403
+*.pid                                403
+*.lock                               403
+.gradle/*                            403
 
 # Blog/Articles redirects — /blog and /articles routes go to all-articles
 /blog                                /all-articles 301
