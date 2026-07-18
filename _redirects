@@ -1,0 +1,24 @@
+# Security blocks — never serve dangerous files
+/.env                               403
+/.git/*                              403
+*.py                                 403
+*.bat                                403
+*.sh                                 403
+*.ps1                                403
+*.key                                403
+*.pem                                403
+*.crt                                403
+*.csr                                403
+/config*                             403
+/node_modules/*                      403
+
+# Blog/Articles redirects — /blog and /articles routes go to all-articles
+/blog                                /all-articles 301
+/articles                            /all-articles 301
+/blog/*                              /all-articles 301
+
+# www → non-www redirect
+www.remoteworkhub.net/*              https://remoteworkhub.net/:splat 301
+
+# Internal rewrite for articles
+/articles/*                           /:splat 200
