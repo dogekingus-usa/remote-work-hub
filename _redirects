@@ -1,29 +1,62 @@
-# RemoteWorkHub.net - Cloudflare Pages Redirect Rules + Security Blocks
+# RemoteWorkHub.net — Cloudflare Pages _redirects
+# MERGED 2026-08-03: CTO security sweep pattern list + CWOC hourly cycle #4 (wrangler.toml exposure fix)
 # Format: [source] [target] [status] — first match wins
+# Convention: security blocks serve the custom 404 page (fleet standard, verified live on 4/5 sites)
 
-# www -> non-www canonicalization
-https://www.remoteworkhub.net/* https://remoteworkhub.net/:splat 301
+# --- Security: never serve dangerous files ---
+/.env                              /404 404
+/.git/*                            /404 404
+/*.py                              /404 404
+/*.bat                             /404 404
+/*.sh                              /404 404
+/*.ps1                             /404 404
+/*.key                             /404 404
+/*.pem                             /404 404
+/*.crt                             /404 404
+/*.csr                             /404 404
+/config*                           /404 404
+/node_modules/*                    /404 404
+/*.exe                             /404 404
+/*.dll                             /404 404
+/*.bin                             /404 404
+/*.msi                             /404 404
+/*.p7b                             /404 404
+/*.p12                             /404 404
+/*.pfx                             /404 404
+/*.der                             /404 404
+/*.htaccess                        /404 404
+/*.htpasswd                        /404 404
+/.svn/*                            /404 404
+/*/.svn/*                          /404 404
+/.DS_Store                         /404 404
+/Thumbs.db                         /404 404
+/*.sql.gz                          /404 404
+/*.tar.gz                          /404 404
+/*.zip                             /404 404
+/*.rdb                             /404 404
+/*.dump                            /404 404
+/backup*                           /404 404
+/dump*                             /404 404
+/access.log                        /404 404
+/error.log                         /404 404
+/debug.log                         /404 404
+/npm-debug.log*                    /404 404
+/yarn-*.log                        /404 404
+/*.pid                             /404 404
+/*.lock                            /404 404
+/.gradle/*                         /404 404
 
-# Security: Block sensitive file extensions (fleet standard, 2026-07-08 CTO sweep)
-/*.py      /404 404
-/*.bat     /404 404
-/*.sh      /404 404
-/*.ps1     /404 404
-/*.key     /404 404
-/*.pem     /404 404
-/*.env     /404 404
-/*.csr     /404 404
-/*.crt     /404 404
-/*.p12     /404 404
-/*.pfx     /404 404
-/*.sql     /404 404
-/*.sqlite  /404 404
-/*.rdp     /404 404
+# --- Security: config files (wrangler.toml confirmed live-exposed HTTP 200, 2026-08-03) ---
+/wrangler.toml                     /404 404
+/_routes.json                      /404 404
 
-# Security: Block config files from being served (wrangler.toml confirmed live-exposed 200)
-/wrangler.toml  /404 404
-/_routes.json   /404 404
+# --- Blog/Articles redirects — /blog and /articles routes go to all-articles ---
+/blog                              /all-articles  301
+/articles                          /all-articles  301
+/blog/*                            /all-articles  301
 
-# Legacy /blog/ paths -> root level (template leftovers, defensive catch-all)
-/blog/          /all-articles  301
-/blog/*         /:splat        301
+# --- www -> non-www canonicalization ---
+www.remoteworkhub.net/*            https://remoteworkhub.net/:splat  301
+
+# --- Internal rewrite for articles ---
+/articles/*                        /:splat  200
