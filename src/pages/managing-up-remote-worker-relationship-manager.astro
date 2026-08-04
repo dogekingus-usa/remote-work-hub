@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/managing-up-remote-worker-relationship-manager.html?raw';
+
+const title = "Managing Up as a Remote Worker: How to Build a Productive Relationship with Your Remote Manager | Remote Work Hub";
+const description = "Learn how to manage up effectively as a remote employee. Master the art of proactive communication, expectation setting, and trust-building with your remote manager in 2026.";
+const canonical = "https://remoteworkhub.net/managing-up-remote-worker-relationship-manager";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

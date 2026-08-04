@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/four-day-work-week-remote-teams-2026.html?raw';
+
+const title = "The Four-Day Work Week for Remote Teams: Is It Really Working in 2026 — | Remote Work Hub";
+const description = "The four-day work week is exploding in 2026 — especially for remote teams. Discover the real results from global trials, how companies structure reduced hours, and whether a 4-day week could work for your remote job.";
+const canonical = "https://remoteworkhub.net/four-day-work-week-remote-teams-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

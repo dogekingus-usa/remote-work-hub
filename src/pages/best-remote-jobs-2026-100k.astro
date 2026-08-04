@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/best-remote-jobs-2026-100k.html?raw';
+
+const title = "Best Remote Jobs 2026: Top 10 In-Demand Remote Careers With $100K+ Salaries";
+const description = "Discover the top 10 highest-paying remote jobs in 2026 that earn $100K+ salaries. Complete guide with salary data, required skills, job growth projections, and how to land these remote careers.";
+const canonical = "https://remoteworkhub.net/best-remote-jobs-2026-100k";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

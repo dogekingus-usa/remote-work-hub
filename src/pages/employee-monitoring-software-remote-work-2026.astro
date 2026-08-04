@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/employee-monitoring-software-remote-work-2026.html?raw';
+
+const title = "Employee Monitoring Software: What Remote Workers Need to Know About Workplace Surveillance in 2026 | Remote Work Hub";
+const description = "Employee monitoring software is increasingly common for remote teams in 2026. Learn what tools exist, your privacy rights, how to maintain dignity at work, and how to have productive conversations with your employer about tracking.";
+const canonical = "https://remoteworkhub.net/employee-monitoring-software-remote-work-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/stay-focused-working-from-home.html?raw';
+
+const title = "How to Stay Focused Working From Home: Focus Techniques, Environment Design \u0026 Distraction Management";
+const description = "A comprehensive guide to staying focused while working from home. Master the Pomodoro technique, time blocking, deep work, distraction management, accountability systems, and morning routines. Includes focus app comparison and workspace setup tips.";
+const canonical = "https://remoteworkhub.net/stay-focused-working-from-home";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

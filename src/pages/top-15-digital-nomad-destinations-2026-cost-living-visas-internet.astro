@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/top-15-digital-nomad-destinations-2026-cost-living-visas-internet.html?raw';
+
+const title = "Top 15 Digital Nomad Destinations for 2026: Cost of Living, Visa Types \u0026 Internet Speeds Compared | RemoteWorkHub";
+const description = "Discover the top 15 digital nomad destinations for 2026 ranked by cost of living, visa accessibility, and internet speed. Find your perfect work-from-anywhere location with this complete comparison guide.";
+const canonical = "https://remoteworkhub.net/top-15-digital-nomad-destinations-2026-cost-living-visas-internet";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

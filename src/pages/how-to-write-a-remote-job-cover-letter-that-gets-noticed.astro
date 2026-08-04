@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/how-to-write-a-remote-job-cover-letter-that-gets-noticed.html?raw';
+
+const title = "How to Write a Remote Job Cover Letter That Gets Noticed | remoteworkhub.net";
+const description = "Introduction to Writing an Effective Remote Job Cover Letter Are you applying for remote job positions and want your cover letter to stand out? Crafting a compe";
+const canonical = "https://remoteworkhub.net/how-to-write-a-remote-job-cover-letter-that-gets-noticed";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

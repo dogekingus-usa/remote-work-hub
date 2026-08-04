@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/freelance-writing-jobs-2026-complete-guide-starting-work-from-home-writing-career.html?raw';
+
+const title = "Freelance Writing Jobs 2026: Complete Guide to Starting a Work-from-Home Writing Career — RemoteWorkHub";
+const description = "Complete guide to freelance writing jobs in 2026. Learn how to start a work-from-home writing career with no experience, find high-paying clients, set your rates, and build a sustainable freelance writing business.";
+const canonical = "https://remoteworkhub.net/freelance-writing-jobs-2026-complete-guide-starting-work-from-home-writing-career";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/remote-healthcare-jobs-2026-complete-guide.html?raw';
+
+const title = "Remote Healthcare Jobs 2026: Complete Guide to Medical Work-from-Home Careers \u0026 Salaries — RemoteWorkHub";
+const description = "Complete guide to remote healthcare jobs in 2026. Discover work-from-home medical careers including medical coding, telehealth nursing, medical transcription, healthcare administration, and more. Salaries $35K-$150K+.";
+const canonical = "https://remoteworkhub.net/remote-healthcare-jobs-2026-complete-guide.html";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

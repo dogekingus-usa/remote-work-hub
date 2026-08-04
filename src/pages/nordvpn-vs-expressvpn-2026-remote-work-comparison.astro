@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/nordvpn-vs-expressvpn-2026-remote-work-comparison.html?raw';
+
+const title = "NordVPN vs ExpressVPN 2026: Which VPN Is Best for Remote Workers?";
+const description = "Head-to-head comparison of NordVPN vs ExpressVPN for remote workers in 2026. Speed tests, server networks, pricing, privacy audits, and real-world testing from coffee shops to co-working spaces.";
+const canonical = "https://remoteworkhub.net/nordvpn-vs-expressvpn-2026-remote-work-comparison";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

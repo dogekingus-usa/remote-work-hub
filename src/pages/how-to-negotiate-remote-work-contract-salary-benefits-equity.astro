@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/how-to-negotiate-remote-work-contract-salary-benefits-equity.html?raw';
+
+const title = "How to Negotiate a Remote Work Contract: Salary, Benefits \u0026 Equity | RemoteWorkHub";
+const description = "Master the art of remote work contract negotiation. Learn how to maximize salary, benefits, equity, and flexibility clauses in your next remote job offer.";
+const canonical = "https://remoteworkhub.net/how-to-negotiate-remote-work-contract-salary-benefits-equity";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

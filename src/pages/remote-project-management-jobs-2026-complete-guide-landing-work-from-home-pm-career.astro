@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/remote-project-management-jobs-2026-complete-guide-landing-work-from-home-pm-career.html?raw';
+
+const title = "Remote Project Management Jobs 2026: Complete Guide to Landing a Work-From-Home PM Career — RemoteWorkHub";
+const description = "Complete guide to remote project management jobs in 2026. Learn top companies hiring remote PMs, salary ranges by level, essential certifications, tools, and how to land your first remote project management role.";
+const canonical = "https://remoteworkhub.net/remote-project-management-jobs-2026-complete-guide-landing-work-from-home-pm-career";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

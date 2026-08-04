@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/find-remote-job-2026.html?raw';
+
+const title = "How to Find a Remote Job in 2026: Market Insights, Job Boards, Portfolio, Interviews \u0026 Negotiation — Remote Work Hub";
+const description = "Complete guide to finding a remote job in 2026. Market insights and hiring trends, detailed comparison of 10+ remote job boards with costs, portfolio building strategies, application tips, interview preparation, and contract negotiation playbook.";
+const canonical = "https://remoteworkhub.net/find-remote-job-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/second-income-ideas-for-remote-workers.html?raw';
+
+const title = "Best Second Income Ideas for Remote Workers That Fit Around Your Full-Time Job | Remote Work Hub";
+const description = "Remote workers have unique advantages for building second income streams. Discover 10 side income ideas that complement your remote career, from freelancing to digital products to micro-SaaS.";
+const canonical = "https://remoteworkhub.net/second-income-ideas-for-remote-workers";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

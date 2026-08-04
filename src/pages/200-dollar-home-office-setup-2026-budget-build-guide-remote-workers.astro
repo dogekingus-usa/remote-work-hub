@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/200-dollar-home-office-setup-2026-budget-build-guide-remote-workers.html?raw';
+
+const title = "$200 Home Office Setup 2026: Complete Budget Build Guide for Remote Workers | RemoteWorkHub";
+const description = "Build a complete home office for under $200 in 2026. Step-by-step guide covering ergonomic desk setups, budget monitors, affordable chairs, lighting, and accessories. Includes Amazon affiliate links for every item.";
+const canonical = "https://remoteworkhub.net/200-dollar-home-office-setup-2026-budget-build-guide-remote-workers";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/digital-nomad-visa-step-by-step-2026.html?raw';
+
+const title = "Digital Nomad Visa 2026: Step-by-Step Application Guide for 10 Countries | remoteworkhub.net";
+const description = "Complete step-by-step digital nomad visa application guide for 2026. 10 countries compared  Spain, Portugal, Thailand, UAE, Malaysia, Estonia, Greece, Colombia, Croatia, and Indonesia. Income requirements, costs, processing times, and document checklists.";
+const canonical = "https://remoteworkhub.net/digital-nomad-visa-step-by-step-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

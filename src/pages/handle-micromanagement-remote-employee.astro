@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/handle-micromanagement-remote-employee.html?raw';
+
+const title = "How to Handle Micromanagement as a Remote Employee: Strategies for Regaining Trust and Autonomy in 2026 | Remote Work Hub";
+const description = "Remote micromanagement is a growing pain point in 2026. Learn proven strategies to rebuild trust, communicate proactively, and regain autonomy when your remote manager is hovering too close.";
+const canonical = "https://remoteworkhub.net/handle-micromanagement-remote-employee";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

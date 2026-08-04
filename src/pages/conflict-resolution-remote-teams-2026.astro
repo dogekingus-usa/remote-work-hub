@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/conflict-resolution-remote-teams-2026.html?raw';
+
+const title = "Conflict Resolution in Remote Teams: How to Handle Workplace Disagreements When You Can\u0027t Read the Room";
+const description = "Learn conflict resolution strategies for remote teams in 2026. Master async communication, video mediation, and de-escalation techniques when you can\u0027t read body language or gather in person.";
+const canonical = "https://remoteworkhub.net/conflict-resolution-remote-teams-2026.html";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

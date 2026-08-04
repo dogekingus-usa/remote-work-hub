@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/digital-detox-remote-workers.html?raw';
+
+const title = "Digital Detox for Remote Workers: Reclaim Focus and Prevent Burnout in 2026";
+const description = "Comprehensive digital detox guide for remote workers. Signs of digital burnout, screen time statistics, proven detox strategies, and best app blocking tools like Freedom, Cold Turkey, and Opal.";
+const canonical = "https://remoteworkhub.net/digital-detox-remote-workers";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>

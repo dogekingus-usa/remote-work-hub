@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTA from '../components/CTA.astro';
+import body from '../bodies/rw-wave18-article5-remote-onboarding.html?raw';
+
+const title = "Remote Onboarding Done Right: How New Hires Can Thrive in a Fully Distributed Company in 2026 | Remote Work Hub";
+const description = "Master remote onboarding as a new hire. Learn how to build relationships, understand company culture, set up productive workflows, and make a strong impression in your first 90 days at a distributed company.";
+const canonical = "https://remoteworkhub.net/remote-onboarding-new-hires-thrive-distributed-company-2026";
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  url: canonical,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  publisher: { '@type': 'Organization', name: 'RemoteWorkHub' },
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-4xl px-4 py-8">
+    <Fragment set:html={body} />
+    <div class="mt-12 text-center">
+      <CTA href="/all-articles" text="Browse More Articles" variant="secondary" />
+    </div>
+  </article>
+</BaseLayout>
