@@ -4,9 +4,6 @@
 # Convention: security blocks serve the custom 404 page (fleet standard, verified live on 4/5 sites)
 
 # --- Security: never serve dangerous files ---
-# CWOC 2026-08-06: trailing-slash -> clean URL (SEO consistency, all-articles/about/products etc.)
-/*/ /:splat 301
-
 /.env                              /404 404
 /.git/*                            /404 404
 /*.py                              /404 404
