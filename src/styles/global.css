@@ -1,3 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* remoteworkhub.net — global.css (Tailwind v4, thin entry per V4-MIGRATION-PACKAGE)
+   tokens.css is self-contained (imports tailwindcss + all @theme blocks). */
+@import "./tokens.css";
+
+/* ============================================================
+   LEGACY COMPAT LAYER (temporary — remove at Phase 1.2)
+   Literal v3 values from git HEAD tailwind.config.mjs. RWH markup
+   currently uses no brand/dark/accent classes (scanned), but the
+   layer is kept as a safety net for templates/partials.
+   ============================================================ */
+@theme {
+  /* old `brand-*` scale — literal v3 values (sky) */
+  --color-brand-400: #38bdf8;
+  --color-brand-500: #0ea5e9;
+  --color-brand-600: #0284c7;
+  --color-brand-700: #0369a1;
+  /* old `accent-*` scale — literal v3 values (orange) */
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  /* old `dark-*` scale — literal v3 values (slate) */
+  --color-dark-800: #1e293b;
+  --color-dark-900: #0f172a;
+}
