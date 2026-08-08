@@ -1,4 +1,11 @@
 {
   "site": "remoteworkhub.net",
-  "themeClass": "theme-remoteworkhub"
+  "themeClass": "theme-remoteworkhub",
+  "extraExpectedClasses": [
+    ".bg-surface",
+    ".text-ink",
+    ".bg-brand",
+    ".text-ink-soft",
+    ".bg-elevated"
+  ]
 }
