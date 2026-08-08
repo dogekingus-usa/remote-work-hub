@@ -1,0 +1,10 @@
+{
+  "pages": [
+    { "name": "home", "path": "index.html" },
+    { "name": "article", "path": "10-best-remote-jobs-beginners.html" },
+    { "name": "product", "path": "products.html" },
+    { "name": "404", "path": "404.html" },
+    { "name": "thank-you", "path": "thank-you.html" }
+  ],
+  "note": "Per A11Y-QA-GATE-SPEC.md key page set (home, article, product, 404, thank-you). RWH has no category page (dist/category/ absent - matches DK pattern). thank-you.html exists (thank-you.astro) - scannable, no SKIPPED-PENDING needed."
+}

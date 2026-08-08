@@ -1,0 +1,19 @@
+{
+  "site": "remoteworkhub.net",
+  "theme": "light",
+  "pairs": [
+    { "fg": "#ffffff", "bg": "#082f49", "minRatio": 4.5, "ratio": 13.88, "usage": "CTA buttons (computed 08-08: 13.88:1, spec approx ~15)" },
+    { "fg": "#082f49", "bg": "#0EA5E9", "minRatio": 4.5, "ratio": 5.01, "usage": "sky fills with dark text" },
+    { "fg": "#431407", "bg": "#F97316", "minRatio": 4.5, "ratio": 5.58, "usage": "badge text on orange" }
+  ],
+  "forbidden": [
+    { "fg": "#0EA5E9", "bg": "#ffffff", "reason": "sky on white 2.77:1 FAIL - never sky as text on white" },
+    { "fg": "#ffffff", "bg": "#F97316", "reason": "white on orange 2.80:1 FAIL" }
+  ],
+  "nonText": [
+    { "fg": "#082f49", "bg": "#ffffff", "minRatio": 3.0, "usage": "focus ring / borders / icons" }
+  ],
+  "generated": "2026-08-08",
+  "by": "tailwind-specialist",
+  "source": "DESIGN-SYSTEM-SPEC-v2.md ┬º4.5 (brand-designer script-verified, re-verified 08-08)"
+}
